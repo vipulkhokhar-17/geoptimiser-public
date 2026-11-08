@@ -1,0 +1,39 @@
+{
+  "spec_version": 1,
+  "id": "a3_single_root_cause",
+  "title": "One missing <main> triggers overlapping checks",
+  "description": "A page without any <main>/<article> fails the main-content signal and the landmark check for the same root cause; the aggregate and the findings must count it once.",
+  "defects": [
+    "A3"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme div soup</title>\n<meta name=\"description\" content=\"A page built without landmarks.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<div><div><h1>Div soup</h1><p>Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. Content in plain divs without landmarks. </p></div></div>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F052": {
+          "status": "fail"
+        },
+        "F059": {
+          "status": "fail"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F052"
+      ],
+      "absent": [
+        "fnd_F059"
+      ]
+    }
+  }
+}

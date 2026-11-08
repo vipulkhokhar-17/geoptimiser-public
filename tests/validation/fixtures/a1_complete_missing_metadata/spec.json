@@ -1,0 +1,55 @@
+{
+  "spec_version": 1,
+  "id": "a1_complete_missing_metadata",
+  "title": "Complete page that genuinely lacks metadata",
+  "description": "Control for the truncation fixtures: the document is complete, so missing title, description, canonical, lang and a broken JSON-LD block are confirmed defects.",
+  "defects": [
+    "A1",
+    "A5"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<html><head></head><body><main><p>A short page that really lacks all metadata. A short page that really lacks all metadata. A short page that really lacks all metadata. A short page that really lacks all metadata. </p></main><script type=\"application/ld+json\">{\"@type\": \"Organization\", \"name\": }</script></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F021": {
+          "status": "fail"
+        },
+        "F024": {
+          "status": "fail"
+        },
+        "F011": {
+          "status": "fail"
+        },
+        "F027": {
+          "status": "fail"
+        },
+        "F061": {
+          "status": "fail",
+          "explanation_contains": [
+            "could not be parsed"
+          ]
+        },
+        "F060": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F021",
+        "fnd_F024",
+        "fnd_F011",
+        "fnd_F061"
+      ]
+    }
+  }
+}

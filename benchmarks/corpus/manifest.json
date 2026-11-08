@@ -1,0 +1,876 @@
+{
+  "corpus_version": 1,
+  "name": "repository-local initial corpus",
+  "description": "Pages already in this repository, labelled by an independent parser. Exists to exercise the evaluation framework and to cross-check the extractor; it is not a real-world benchmark.",
+  "real_world": false,
+  "snapshots": [
+    {
+      "snapshot_id": "demo_before_index",
+      "file": "snapshots/demo_before_index.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/before/index.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "marketing home (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_before_about",
+      "file": "snapshots/demo_before_about.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/before/about.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "marketing about (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_before_pricing",
+      "file": "snapshots/demo_before_pricing.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/before/pricing.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "pricing (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_before_faq",
+      "file": "snapshots/demo_before_faq.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/before/faq.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "faq (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_before_blog",
+      "file": "snapshots/demo_before_blog.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/before/blog-how-we-price.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "blog article (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F061": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_after_index",
+      "file": "snapshots/demo_after_index.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/after/index.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "marketing home, fixed (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "demo_after_about",
+      "file": "snapshots/demo_after_about.html",
+      "url": "https://fixture.test/",
+      "source": "repository file src/geoptimiser/demo/site/after/about.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "marketing about, fixed (demo)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_full_page",
+      "file": "snapshots/fx_full_page.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/full_page.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "complete page (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F061": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_rich_page",
+      "file": "snapshots/fx_rich_page.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/rich_page.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "rich page (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F081": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_malformed",
+      "file": "snapshots/fx_malformed.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/malformed.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "malformed markup (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F061": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F081": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_rich_malformed",
+      "file": "snapshots/fx_rich_malformed.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/rich_malformed.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "malformed rich markup (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F081": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": false,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_incomplete",
+      "file": "snapshots/fx_incomplete.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/incomplete.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "fragment without head (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_rich_incomplete",
+      "file": "snapshots/fx_rich_incomplete.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/rich_incomplete.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "rich fragment (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F081": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    },
+    {
+      "snapshot_id": "fx_empty",
+      "file": "snapshots/fx_empty.html",
+      "url": "https://fixture.test/",
+      "source": "repository file tests/extraction/fixtures/empty.html",
+      "snapshot_date": "2026-10-27",
+      "page_type": "empty document (fixture)",
+      "real_world": false,
+      "response": {
+        "status": 200,
+        "truncated": false,
+        "content_type": "text/html"
+      },
+      "labels": {
+        "F021": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F024": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F011": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F027": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F029": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F035": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        },
+        "F052": {
+          "defect": true,
+          "labeler": "oracle:lxml 6.1.3",
+          "kind": "oracle",
+          "uncertainty": "oracle written independently of the extractor; not a human judgment"
+        }
+      },
+      "notes": "Synthetic page authored for this repository; not a real website."
+    }
+  ]
+}

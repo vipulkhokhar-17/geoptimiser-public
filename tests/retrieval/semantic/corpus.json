@@ -1,0 +1,15 @@
+{
+  "note": "Synthetic paraphrase-probe corpus. Written to separate meaning from shared words; not a benchmark of real sites.",
+  "pages": [
+    {"url": "https://p.test/refunds", "headings": [[1, "Money-back policy"]], "text": "Money-back policy\nCustomers can return purchases within thirty days and receive their payment back in full."},
+    {"url": "https://p.test/recovery", "headings": [[1, "Account recovery"]], "text": "Account recovery\nIf you cannot remember your login secret, request an emailed link to choose a new one."},
+    {"url": "https://p.test/outages", "headings": [[1, "Service disruptions"]], "text": "Service disruptions\nWhen our platform goes offline, engineers are paged immediately and a status notice is posted."},
+    {"url": "https://p.test/delivery", "headings": [[1, "Delivery times"]], "text": "Delivery times\nParcels typically arrive within five business days after leaving our warehouse."},
+    {"url": "https://p.test/privacy", "headings": [[1, "Personal information handling"]], "text": "Personal information handling\nWe never sell the details you share with us to advertisers."},
+    {"url": "https://p.test/cancel", "headings": [[1, "Ending your subscription"]], "text": "Ending your subscription\nYou may terminate your plan at any time from the billing screen without penalty."},
+    {"url": "https://p.test/careers", "headings": [[1, "Join our team"]], "text": "Join our team\nWe are hiring engineers and designers for remote positions across many countries."},
+    {"url": "https://p.test/api", "headings": [[1, "Developer interface"]], "text": "Developer interface\nProgrammatic access lets software read and write your records using authenticated requests."},
+    {"url": "https://p.test/pricing", "headings": [[1, "Plans and cost"]], "text": "Plans and cost\nThree tiers are available, billed monthly or yearly."},
+    {"url": "https://p.test/green", "headings": [[1, "Environmental commitment"]], "text": "Environmental commitment\nOur data centers run on renewable electricity."}
+  ]
+}

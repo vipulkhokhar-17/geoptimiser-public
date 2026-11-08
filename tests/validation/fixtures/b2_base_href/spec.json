@@ -1,0 +1,34 @@
+{
+  "spec_version": 1,
+  "id": "b2_base_href",
+  "title": "Relative link resolved against <base href>",
+  "description": "A relative link on a page with <base href> must resolve identically for the crawler and the extractor.",
+  "defects": [
+    "B2"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme base href</title>\n<meta name=\"description\" content=\"Home using a base href.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n<base href=\"https://fixture.test/docs/\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Base href</h1><p>Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. Home page using a base element. </p><a href=\"guide\">relative guide</a></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/docs/guide": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme docs guide</title>\n<meta name=\"description\" content=\"The docs guide page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/docs/guide\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Docs guide</h1><p>Docs explains how Acme Widgets supports small teams with clear plans. Docs explains how Acme Widgets supports small teams with clear plans. Docs explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Docs explains how Acme Widgets supports small teams with clear plans. Docs explains how Acme Widgets supports small teams with clear plans. Docs explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/docs/guide": {
+        "F001": {
+          "status": "pass"
+        },
+        "F072": {
+          "status": "pass"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "answers": {
+    "what is invoice automation": {
+      "text": "Invoice automation replaces manual entry. Acme Billing and Globex are common choices.",
+      "citations": [{"url": "https://acme.test/what-is", "title": "What is invoice automation"},
+                    {"url": "https://blog.example.org/post"}]
+    },
+    "how to approve invoices faster": {
+      "text": "Set approval rules, then route exceptions to a person.",
+      "citations": []
+    }
+  }
+}

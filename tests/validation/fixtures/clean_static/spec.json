@@ -1,0 +1,315 @@
+{
+  "spec_version": 1,
+  "id": "clean_static",
+  "title": "Clean static site",
+  "description": "Three well-formed static pages with consistent metadata, valid JSON-LD and a link graph.",
+  "defects": [],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme Widgets pricing and plans</title>\n<meta name=\"description\" content=\"Pricing and plans for Acme Widgets teams.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://fixture.test/#org\",\"name\":\"Acme Widgets\",\"url\":\"https://fixture.test/\",\"logo\":\"https://fixture.test/logo.png\"}</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Acme Widgets pricing</h1><p>Pricing explains how Acme Widgets supports small teams with clear plans. Pricing explains how Acme Widgets supports small teams with clear plans. Pricing explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Pricing explains how Acme Widgets supports small teams with clear plans. Pricing explains how Acme Widgets supports small teams with clear plans. Pricing explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/about": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>About the Acme Widgets team</title>\n<meta name=\"description\" content=\"Meet the team that builds Acme Widgets for small teams.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/about\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://fixture.test/#org\",\"name\":\"Acme Widgets\",\"url\":\"https://fixture.test/\",\"logo\":\"https://fixture.test/logo.png\"}</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>About the Acme team</h1><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/pricing": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme Widgets plans and billing</title>\n<meta name=\"description\" content=\"Compare Acme Widgets plans and how billing works each month.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/pricing\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://fixture.test/#org\",\"name\":\"Acme Widgets\",\"url\":\"https://fixture.test/\",\"logo\":\"https://fixture.test/logo.png\"}</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Plans and billing</h1><p>Billing explains how Acme Widgets supports small teams with clear plans. Billing explains how Acme Widgets supports small teams with clear plans. Billing explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Billing explains how Acme Widgets supports small teams with clear plans. Billing explains how Acme Widgets supports small teams with clear plans. Billing explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F001": {
+          "status": "pass"
+        },
+        "F002": {
+          "status": "pass"
+        },
+        "F005": {
+          "status": "pass"
+        },
+        "F006": {
+          "status": "pass"
+        },
+        "F011": {
+          "status": "pass"
+        },
+        "F012": {
+          "status": "pass"
+        },
+        "F013": {
+          "status": "pass"
+        },
+        "F014": {
+          "status": "pass"
+        },
+        "F015": {
+          "status": "not_applicable"
+        },
+        "F016": {
+          "status": "not_applicable"
+        },
+        "F020": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "pass"
+        },
+        "F022": {
+          "status": "pass"
+        },
+        "F023": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        },
+        "F025": {
+          "status": "pass"
+        },
+        "F027": {
+          "status": "pass"
+        },
+        "F029": {
+          "status": "pass"
+        },
+        "F035": {
+          "status": "pass"
+        },
+        "F051": {
+          "status": "pass"
+        },
+        "F052": {
+          "status": "pass"
+        },
+        "F055": {
+          "status": "pass"
+        },
+        "F061": {
+          "status": "pass"
+        },
+        "F062": {
+          "status": "pass"
+        }
+      },
+      "/about": {
+        "F001": {
+          "status": "pass"
+        },
+        "F002": {
+          "status": "pass"
+        },
+        "F005": {
+          "status": "pass"
+        },
+        "F006": {
+          "status": "pass"
+        },
+        "F011": {
+          "status": "pass"
+        },
+        "F012": {
+          "status": "pass"
+        },
+        "F013": {
+          "status": "pass"
+        },
+        "F014": {
+          "status": "pass"
+        },
+        "F015": {
+          "status": "not_applicable"
+        },
+        "F016": {
+          "status": "not_applicable"
+        },
+        "F020": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "pass"
+        },
+        "F022": {
+          "status": "pass"
+        },
+        "F023": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        },
+        "F025": {
+          "status": "pass"
+        },
+        "F027": {
+          "status": "pass"
+        },
+        "F029": {
+          "status": "pass"
+        },
+        "F035": {
+          "status": "pass"
+        },
+        "F051": {
+          "status": "pass"
+        },
+        "F052": {
+          "status": "pass"
+        },
+        "F055": {
+          "status": "pass"
+        },
+        "F061": {
+          "status": "pass"
+        },
+        "F062": {
+          "status": "pass"
+        }
+      },
+      "/pricing": {
+        "F001": {
+          "status": "pass"
+        },
+        "F002": {
+          "status": "pass"
+        },
+        "F005": {
+          "status": "pass"
+        },
+        "F006": {
+          "status": "pass"
+        },
+        "F011": {
+          "status": "pass"
+        },
+        "F012": {
+          "status": "pass"
+        },
+        "F013": {
+          "status": "pass"
+        },
+        "F014": {
+          "status": "pass"
+        },
+        "F015": {
+          "status": "not_applicable"
+        },
+        "F016": {
+          "status": "not_applicable"
+        },
+        "F020": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "pass"
+        },
+        "F022": {
+          "status": "pass"
+        },
+        "F023": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        },
+        "F025": {
+          "status": "pass"
+        },
+        "F027": {
+          "status": "pass"
+        },
+        "F029": {
+          "status": "pass"
+        },
+        "F035": {
+          "status": "pass"
+        },
+        "F051": {
+          "status": "pass"
+        },
+        "F052": {
+          "status": "pass"
+        },
+        "F055": {
+          "status": "pass"
+        },
+        "F061": {
+          "status": "pass"
+        },
+        "F062": {
+          "status": "pass"
+        }
+      }
+    },
+    "site": {
+      "F003": {
+        "status": "pass"
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F021",
+        "fnd_F024",
+        "fnd_F011",
+        "fnd_F052",
+        "fnd_F061"
+      ]
+    },
+    "scores": {
+      "overall": {
+        "score": 1.0
+      },
+      "categories": {
+        "A": {
+          "reportable": true
+        },
+        "B": {
+          "reportable": true
+        },
+        "C": {
+          "reportable": true
+        },
+        "D": {
+          "reportable": false
+        },
+        "E": {
+          "reportable": false
+        },
+        "F": {
+          "reportable": true
+        },
+        "G": {
+          "reportable": true
+        },
+        "H": {
+          "reportable": false
+        },
+        "I": {
+          "reportable": false
+        },
+        "J": {
+          "reportable": false
+        },
+        "K": {
+          "reportable": false
+        },
+        "L": {
+          "reportable": false
+        }
+      },
+      "not_contributing": [
+        "F009",
+        "F072",
+        "F010"
+      ],
+      "contributing": [
+        "F021",
+        "F001"
+      ]
+    }
+  }
+}

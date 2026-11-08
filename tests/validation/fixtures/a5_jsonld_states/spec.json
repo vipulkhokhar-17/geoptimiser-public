@@ -1,0 +1,55 @@
+{
+  "spec_version": 1,
+  "id": "a5_jsonld_states",
+  "title": "JSON-LD valid, invalid and missing",
+  "description": "Complete pages with valid, syntactically invalid and no JSON-LD.",
+  "defects": [
+    "A5"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme JSON-LD states</title>\n<meta name=\"description\" content=\"Pages with different JSON-LD states.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/valid\">valid page</a> <a href=\"/invalid\">invalid page</a> <a href=\"/missing\">missing page</a> </nav></header><main><h1>JSON-LD states</h1><p>States explains how Acme Widgets supports small teams with clear plans. States explains how Acme Widgets supports small teams with clear plans. States explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>States explains how Acme Widgets supports small teams with clear plans. States explains how Acme Widgets supports small teams with clear plans. States explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/valid": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme valid JSON-LD page</title>\n<meta name=\"description\" content=\"The valid JSON-LD state page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/valid\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Acme\",\"url\":\"https://fixture.test/\"}</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Valid page</h1><p>Valid explains how Acme Widgets supports small teams with clear plans. Valid explains how Acme Widgets supports small teams with clear plans. Valid explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Valid explains how Acme Widgets supports small teams with clear plans. Valid explains how Acme Widgets supports small teams with clear plans. Valid explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/invalid": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme invalid JSON-LD page</title>\n<meta name=\"description\" content=\"The invalid JSON-LD state page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/invalid\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\": }</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Invalid page</h1><p>Invalid explains how Acme Widgets supports small teams with clear plans. Invalid explains how Acme Widgets supports small teams with clear plans. Invalid explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Invalid explains how Acme Widgets supports small teams with clear plans. Invalid explains how Acme Widgets supports small teams with clear plans. Invalid explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/missing": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme missing JSON-LD page</title>\n<meta name=\"description\" content=\"The missing JSON-LD state page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/missing\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Missing page</h1><p>Missing explains how Acme Widgets supports small teams with clear plans. Missing explains how Acme Widgets supports small teams with clear plans. Missing explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Missing explains how Acme Widgets supports small teams with clear plans. Missing explains how Acme Widgets supports small teams with clear plans. Missing explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/valid": {
+        "F061": {
+          "status": "pass"
+        }
+      },
+      "/invalid": {
+        "F061": {
+          "status": "fail",
+          "explanation_contains": [
+            "could not be parsed"
+          ]
+        }
+      },
+      "/missing": {
+        "F061": {
+          "status": "not_applicable"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F061"
+      ]
+    }
+  }
+}

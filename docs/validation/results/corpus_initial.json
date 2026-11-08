@@ -1,0 +1,819 @@
+{
+  "corpus": "repository-local initial corpus",
+  "corpus_version": 1,
+  "real_world": false,
+  "snapshots": 14,
+  "labels": 105,
+  "labels_by_kind": {
+    "oracle": 105
+  },
+  "labels_with_second_reviewer": 0,
+  "per_feature": {
+    "F011": {
+      "tp": 10,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.7225,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.7225,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F021": {
+      "tp": 5,
+      "fp": 0,
+      "tn": 9,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.5655,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.5655,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F024": {
+      "tp": 7,
+      "fp": 0,
+      "tn": 7,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.6457,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.6457,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F027": {
+      "tp": 4,
+      "fp": 0,
+      "tn": 10,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.5101,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.5101,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F029": {
+      "tp": 13,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.7719,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.7719,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F035": {
+      "tp": 6,
+      "fp": 0,
+      "tn": 8,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.6097,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.6097,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F052": {
+      "tp": 4,
+      "fp": 0,
+      "tn": 10,
+      "fn": 0,
+      "n": 14,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.5101,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.5101,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F061": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 3,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F081": {
+      "tp": 3,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 4,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.4385,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.4385,
+        1.0
+      ],
+      "abstained": {}
+    }
+  },
+  "disagreements": [],
+  "predictions": [
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F011",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_index",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F021",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_about",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_pricing",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_faq",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F061",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_before_blog",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F011",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_index",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "demo_after_about",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F011",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F061",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_full_page",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F029",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F035",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F081",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_page",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F021",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F024",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F011",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F027",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F061",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F081",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_malformed",
+      "feature": "F052",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F021",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F027",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F081",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_malformed",
+      "feature": "F052",
+      "label": "ok",
+      "model": "pass"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F021",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F027",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_incomplete",
+      "feature": "F052",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F021",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F027",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F081",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_rich_incomplete",
+      "feature": "F052",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F021",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F024",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F011",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F027",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F029",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F035",
+      "label": "defect",
+      "model": "fail"
+    },
+    {
+      "snapshot": "fx_empty",
+      "feature": "F052",
+      "label": "defect",
+      "model": "fail"
+    }
+  ],
+  "caveats": [
+    "Not a real-world benchmark.",
+    "Sample sizes are tiny; every interval above is wide and no accuracy claim follows from them.",
+    "Oracle labels check agreement between two implementations on objective properties; they are not human judgments of usefulness.",
+    "A mean of undefined metrics is never computed; undefined means no positive prediction or no true positive existed."
+  ],
+  "targets": {
+    "presence_and_validity_checks": "precision and recall >= 0.95 on a sufficiently representative labelled benchmark (project acceptance target, not a universal standard)",
+    "heuristic_checks": "precision < 0.80 -> candidate for informational-only",
+    "met": "not assessed: no feature has a representative labelled benchmark"
+  }
+}

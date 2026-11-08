@@ -1,0 +1,77 @@
+{
+  "spec_version": 1,
+  "id": "b1_empty_blocked_nonhtml",
+  "title": "Empty, blocked and non-HTML responses",
+  "description": "A 200 with an empty body, a 403 and a text/plain response: content checks report why they could not run.",
+  "defects": [
+    "B1",
+    "A2"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme empty and blocked</title>\n<meta name=\"description\" content=\"Home linking to edge responses.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/empty\">empty</a> <a href=\"/blocked\">blocked</a> <a href=\"/plain\">plain</a></nav></header><main><h1>Empty and blocked</h1><p>Edge explains how Acme Widgets supports small teams with clear plans. Edge explains how Acme Widgets supports small teams with clear plans. Edge explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Edge explains how Acme Widgets supports small teams with clear plans. Edge explains how Acme Widgets supports small teams with clear plans. Edge explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/empty": {
+      "text": ""
+    },
+    "/blocked": {
+      "status": 403,
+      "text": "Forbidden",
+      "content_type": "text/plain"
+    },
+    "/plain": {
+      "text": "just text",
+      "content_type": "text/plain"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/empty": {
+        "F001": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "empty"
+          ]
+        }
+      },
+      "/blocked": {
+        "F001": {
+          "status": "fail",
+          "explanation_contains": [
+            "403"
+          ]
+        },
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "http_error"
+          ]
+        }
+      },
+      "/plain": {
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "unsupported_content_type"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F001"
+      ],
+      "absent": [
+        "fnd_F021"
+      ]
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "fixture_retrieval",
+  "version": 1,
+  "industry": "b2b_saas",
+  "description": "Synthetic retrieval fixture. Not a benchmark.",
+  "review_status": "draft",
+  "queries": [
+    {"query_id": "r1", "text": "what is invoice automation", "intent": "informational"},
+    {"query_id": "r2", "text": "how to approve invoices faster", "intent": "how_to"},
+    {"query_id": "r3", "text": "automation vs manual invoicing", "intent": "comparison"},
+    {"query_id": "r4", "text": "pricing plans cost", "intent": "transactional"},
+    {"query_id": "r5", "text": "is it encrypted", "intent": "informational"},
+    {"query_id": "r6", "text": "connect to my ERP", "intent": "how_to"},
+    {"query_id": "r7", "text": "enterprise volume discounts", "intent": "transactional"},
+    {"query_id": "r8", "text": "the of", "intent": "informational"}
+  ]
+}

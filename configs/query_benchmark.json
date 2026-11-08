@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "b2b_saas_core",
+  "version": 1,
+  "industry": "b2b_saas",
+  "language": "en",
+  "description": "DRAFT starter list of generic B2B SaaS buyer questions. It has not been reviewed by a person and must be replaced or reviewed (review_status=reviewed) before any real audit relies on it.",
+  "review_status": "draft",
+  "queries": [
+    {"query_id": "q001", "text": "what is invoice automation software", "intent": "informational", "topic": "invoicing"},
+    {"query_id": "q002", "text": "how to automate accounts payable approvals", "intent": "how_to", "topic": "accounts payable"},
+    {"query_id": "q003", "text": "best invoicing software for small businesses", "intent": "commercial_investigation", "topic": "invoicing"},
+    {"query_id": "q004", "text": "invoice automation vs manual invoicing", "intent": "comparison", "topic": "invoicing"},
+    {"query_id": "q005", "text": "alternatives to spreadsheet-based expense tracking", "intent": "comparison", "topic": "expenses"},
+    {"query_id": "q006", "text": "how does three-way matching work", "intent": "informational", "topic": "accounts payable"},
+    {"query_id": "q007", "text": "invoicing software pricing for teams", "intent": "transactional", "topic": "invoicing"},
+    {"query_id": "q008", "text": "how to reduce late customer payments", "intent": "how_to", "topic": "collections"}
+  ]
+}

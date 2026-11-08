@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "name": "fixture_queries",
+  "version": 1,
+  "industry": "b2b_saas",
+  "description": "Synthetic fixture for unit tests. Not a benchmark.",
+  "review_status": "draft",
+  "queries": [
+    {"query_id": "q1", "text": "what is invoice automation", "intent": "informational"},
+    {"query_id": "q2", "text": "how to approve invoices faster", "intent": "how_to"},
+    {"query_id": "q3", "text": "automation vs manual invoicing", "intent": "comparison"},
+    {"query_id": "q4", "text": "invoicing pricing", "intent": "transactional"},
+    {"query_id": "q5", "text": "query with only irrelevant labels", "intent": "informational"},
+    {"query_id": "q6", "text": "query with no labels at all", "intent": "informational"}
+  ]
+}

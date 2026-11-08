@@ -1,0 +1,19 @@
+{
+  "note": "Synthetic pages for unit tests. Not real site content.",
+  "pages": [
+    {"url": "https://x.test/what-is", "headings": [[1, "What is invoice automation"], [2, "Benefits"]],
+     "text": "What is invoice automation\nInvoice automation uses software to capture, validate and route supplier invoices without manual data entry.\nBenefits\nIt reduces errors and speeds up payment cycles."},
+    {"url": "https://x.test/approvals", "headings": [[1, "Approve invoices faster"]],
+     "text": "Approve invoices faster\nSet approval rules so invoices route to the right approver automatically. Reminders stop approvals from stalling."},
+    {"url": "https://x.test/pricing", "headings": [[1, "Pricing"], [2, "Enterprise"]],
+     "text": "Pricing\nPlans start at a flat monthly fee per user. Annual billing lowers the price.\nEnterprise\nCustom contracts and volume discounts are available."},
+    {"url": "https://x.test/security", "headings": [[1, "Security and compliance"]],
+     "text": "Security and compliance\nWe encrypt data at rest and in transit. SOC 2 audits happen yearly."},
+    {"url": "https://x.test/integrations", "headings": [[1, "Integrations"]],
+     "text": "Integrations\nConnect your accounting software, ERP and bank feeds through our API."},
+    {"url": "https://x.test/compare", "headings": [[1, "Automation versus manual invoicing"]],
+     "text": "Automation versus manual invoicing\nManual invoicing means keying data by hand which is slow and error prone. Automation removes the keying."},
+    {"url": "https://x.test/about", "headings": [[1, "About the team"]],
+     "text": "About the team\nWe are a small company that builds finance tools and loves coffee."}
+  ]
+}

@@ -1,0 +1,53 @@
+{
+  "spec_version": 1,
+  "id": "empty_failed_crawl",
+  "title": "The site answers 500 on every URL",
+  "description": "No page was measured; no score may be reported and the failure is a single HTTP finding.",
+  "defects": [
+    "A4"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "status": 500,
+      "text": "boom",
+      "content_type": "text/plain"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F001": {
+          "status": "fail",
+          "explanation_contains": [
+            "500"
+          ]
+        },
+        "F021": {
+          "status": "not_measured"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F001"
+      ]
+    },
+    "scores": {
+      "overall": {
+        "reportable": false,
+        "score": null
+      },
+      "categories": {
+        "C": {
+          "reportable": false,
+          "score": null
+        }
+      }
+    }
+  }
+}

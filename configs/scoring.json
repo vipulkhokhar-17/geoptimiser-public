@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "unit_credit": {
+    "pass": 1.0,
+    "warning": 0.5,
+    "fail": 0.0
+  },
+  "excluded_from_denominator": [
+    "not_applicable",
+    "not_measured",
+    "error"
+  ],
+  "group_score": "unweighted mean of measured scored features' pass rates",
+  "min_reportable_coverage": 0.5,
+  "reportability": "a group's score may be displayed only when feature coverage reaches min_reportable_coverage (inclusive); consumers show reported_score",
+  "not_contributing": "features that cannot discriminate under the crawl configuration, and results that only repeat another result, are kept out of the aggregate (features/contribution.py)",
+  "see": "docs/DECISIONS.md ADR-0012 and geoptimiser/features/scoring.py"
+}

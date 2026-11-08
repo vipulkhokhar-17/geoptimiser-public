@@ -1,0 +1,71 @@
+{
+  "spec_version": 1,
+  "id": "k1_transport_security",
+  "title": "HTTPS with and without a usable HSTS policy (F110)",
+  "description": "Expectations written before the first run. The home page sends a valid Strict-Transport-Security header; other pages send none, max-age=0, or a header without max-age. Plain-HTTP delivery is covered by unit tests because the fixture origin is https.",
+  "defects": [],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Transport home</title><meta name=\"description\" content=\"Transport home page for the transport security fixture.\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body><header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/no-hsts\">No HSTS</a> <a href=\"/cleared\">Cleared</a> <a href=\"/broken\">Broken</a></nav></header><main><h1>Transport home</h1><p>Acme Widgets explains its plans and billing in plain words for small teams. Each plan lists what is included.</p></main></body></html>",
+      "headers": {
+        "Strict-Transport-Security": "max-age=31536000; includeSubDomains"
+      }
+    },
+    "/no-hsts": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>No HSTS</title><meta name=\"description\" content=\"No HSTS page for the transport security fixture.\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body><header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/no-hsts\">No HSTS</a> <a href=\"/cleared\">Cleared</a> <a href=\"/broken\">Broken</a></nav></header><main><h1>No HSTS</h1><p>Acme Widgets explains its plans and billing in plain words for small teams. Each plan lists what is included.</p></main></body></html>"
+    },
+    "/cleared": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Cleared</title><meta name=\"description\" content=\"Cleared page for the transport security fixture.\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body><header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/no-hsts\">No HSTS</a> <a href=\"/cleared\">Cleared</a> <a href=\"/broken\">Broken</a></nav></header><main><h1>Cleared</h1><p>Acme Widgets explains its plans and billing in plain words for small teams. Each plan lists what is included.</p></main></body></html>",
+      "headers": {
+        "Strict-Transport-Security": "max-age=0"
+      }
+    },
+    "/broken": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Broken</title><meta name=\"description\" content=\"Broken page for the transport security fixture.\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"></head><body><header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/no-hsts\">No HSTS</a> <a href=\"/cleared\">Cleared</a> <a href=\"/broken\">Broken</a></nav></header><main><h1>Broken</h1><p>Acme Widgets explains its plans and billing in plain words for small teams. Each plan lists what is included.</p></main></body></html>",
+      "headers": {
+        "Strict-Transport-Security": "includeSubDomains; preload"
+      }
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F110": {
+          "status": "pass",
+          "explanation_contains": [
+            "max-age=31536000"
+          ]
+        }
+      },
+      "/no-hsts": {
+        "F110": {
+          "status": "fail",
+          "explanation_contains": [
+            "no strict-transport-security"
+          ]
+        }
+      },
+      "/cleared": {
+        "F110": {
+          "status": "fail",
+          "explanation_contains": [
+            "max-age=0"
+          ]
+        }
+      },
+      "/broken": {
+        "F110": {
+          "status": "fail",
+          "explanation_contains": [
+            "not usable"
+          ]
+        }
+      }
+    }
+  }
+}

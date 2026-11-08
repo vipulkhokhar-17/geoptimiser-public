@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Rich page</title>
+</head>
+<body>
+<header>
+  <nav aria-label="Primary">
+    <a href="/">Home</a>
+    <a href="/pricing" rel="nofollow">Pricing</a>
+    <ul><li><a href="/docs">Docs</a></li><li><a href="/blog">Blog</a></li></ul>
+  </nav>
+</header>
+<main>
+  <h1>Rich page</h1>
+  <p>Intro text before the picture. <img src="/img/team-photo.jpg" alt="Our team" width="640" height="480" loading="lazy"> Text after the picture continues here.</p>
+  <figure><img src="https://cdn.example.org/chart.png"><figcaption>Revenue chart</figcaption></figure>
+  <img src="/img/spacer.gif" alt="" role="presentation">
+  <img src="data:image/png;base64,AAAA" alt="inline">
+  <table>
+    <caption>Plans</caption>
+    <tr><th>Plan</th><th>Price</th></tr>
+    <tr><td>Free</td><td>$0</td></tr>
+    <tr><td>Pro</td><td>$10</td></tr>
+  </table>
+  <ol><li>First step</li><li>Second step</li></ol>
+  <dl><dt>Term</dt><dd>Definition</dd></dl>
+  <p>Read <a href="https://other.example.net/study" rel="noopener ugc">the study</a> or <a href="/more">click here</a>.</p>
+  <a href="/logo"><img src="/img/logo.png" alt="Company logo"></a>
+  <div hidden>Secret hidden words that are not shown.</div>
+  <video src="/media/intro.mp4"><track kind="captions" src="intro.vtt"></video>
+  <audio controls><source src="/media/pod.mp3"></audio>
+  <iframe src="https://www.youtube.com/embed/abc"></iframe>
+  <iframe src="https://ads.example.net/frame"></iframe>
+  <noscript><img src="/tracking.gif" alt="no"></noscript>
+</main>
+<aside role="complementary" aria-label="Related">Related links text.</aside>
+<footer><a href="/privacy">Privacy</a></footer>
+</body>
+</html>

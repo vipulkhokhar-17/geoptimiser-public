@@ -1,0 +1,123 @@
+{
+  "spec_version": 1,
+  "id": "a1_trunc_before_title",
+  "title": "Response truncated before the title",
+  "description": "A large head comment pushes the title past the response-size limit; title, description and text are unknown, not missing.",
+  "defects": [
+    "A1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme Widgets home</title>\n<meta name=\"description\" content=\"Welcome to Acme Widgets.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/big\">Big page</a></nav></header><main><h1>Acme Widgets</h1><p>Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/big": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n{{COMMENT:4596}}\n<title>Late title that is beyond the cut</title>\n<meta name=\"description\" content=\"Late description.\">\n</head><body><main><h1>Late page</h1><p>{{WORDS:800}}</p></main></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/big": {
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F022": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F023": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F024": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F025": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F011": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F005": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F051": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F060": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F061": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F027": {
+          "status": "pass"
+        },
+        "F006": {
+          "status": "pass"
+        },
+        "F001": {
+          "status": "pass"
+        },
+        "F102": {
+          "status": "fail",
+          "explanation_contains": [
+            "truncated"
+          ]
+        }
+      },
+      "/": {
+        "F021": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F021",
+        "fnd_F024",
+        "fnd_F011",
+        "fnd_F051",
+        "fnd_F022"
+      ]
+    }
+  },
+  "crawl": {
+    "max_response_bytes": 4096
+  }
+}

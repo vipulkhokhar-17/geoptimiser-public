@@ -1,0 +1,54 @@
+{
+  "spec_version": 1,
+  "id": "a1_trunc_jsonld",
+  "title": "Second JSON-LD block cut by truncation",
+  "description": "The first JSON-LD block is complete; the second is cut by the size limit. The cut block is not a syntax error and must not produce a 'fix your JSON' recommendation.",
+  "defects": [
+    "A1",
+    "A5"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme structured data page</title>\n<meta name=\"description\" content=\"A page with structured data.\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"WebSite\",\"name\":\"Acme\",\"url\":\"https://fixture.test/\"}</script>\n{{COMMENT:3459}}\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Acme Widgets\",\"description\":\"{{WORDS:2000}}\"}</script></head><body><main><h1>Structured</h1></main></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F061": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ],
+          "explanation_excludes": [
+            "syntax"
+          ]
+        },
+        "F062": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F061"
+      ]
+    },
+    "recommendation_excludes": [
+      "json syntax",
+      "invalid json",
+      "fix the json"
+    ]
+  },
+  "crawl": {
+    "max_response_bytes": 4096
+  }
+}

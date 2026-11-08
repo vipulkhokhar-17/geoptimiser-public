@@ -1,0 +1,86 @@
+name: Deploy static frontend to GitHub Pages
+
+# This workflow publishes only the static UI, never the Python backend, RAG pipeline,
+# model weights, database or audit data. Deployment is opt-in and requires an explicit
+# HTTPS API URL. The backend must be deployed and secured separately before enabling this.
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "src/geoptimiser/app/ui/**"
+      - "src/geoptimiser/app/static_export.py"
+      - "src/geoptimiser/app/config.py"
+      - "src/geoptimiser/schemas.py"
+      - "pyproject.toml"
+      - ".github/workflows/pages.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main' && vars.GEOPTIMISER_PAGES_ENABLED == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: read
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: "3.12"
+
+      - name: Install project (base dependencies only)
+        run: |
+          python -m pip install --upgrade pip
+          python -m pip install -e .
+
+      - name: Validate public API URL
+        env:
+          API_BASE: ${{ vars.GEOPTIMISER_API_BASE }}
+        run: |
+          test -n "$API_BASE" || { echo "::error::Set GEOPTIMISER_API_BASE before enabling Pages."; exit 1; }
+          case "$API_BASE" in
+            https://*) ;;
+            *) echo "::error::GEOPTIMISER_API_BASE must use HTTPS."; exit 1 ;;
+          esac
+
+      - name: Export static site
+        env:
+          API_BASE: ${{ vars.GEOPTIMISER_API_BASE }}
+        run: |
+          python -m geoptimiser.app.static_export \
+            --out site --api-base "$API_BASE" --domain geoptimiser.me --force
+          ls -la site
+
+      - uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b # v5
+
+      - uses: actions/upload-pages-artifact@56afc609e74202658d3ffba0e8f6dda462b719fa # v3
+        with:
+          path: site
+
+  deploy:
+    if: github.ref == 'refs/heads/main' && vars.GEOPTIMISER_PAGES_ENABLED == 'true'
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      pages: write
+      id-token: write
+      contents: read
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e # v4

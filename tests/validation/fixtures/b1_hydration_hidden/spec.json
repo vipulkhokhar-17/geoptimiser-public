@@ -1,0 +1,34 @@
+{
+  "spec_version": 1,
+  "id": "b1_hydration_hidden",
+  "title": "Hidden panel text in server HTML",
+  "description": "Most of the text is in a hidden element. The ratio is measured; whether a script reveals it is not evaluated and must be stated.",
+  "defects": [
+    "B1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme hydrated tabs</title>\n<meta name=\"description\" content=\"A page whose body copy is hidden until a script runs.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Tabs</h1><p>Short visible intro for the hydrated tabs page.</p><div hidden><p>Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. Hidden panel text that only a script would reveal. </p></div></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F054": {
+          "status": "fail",
+          "explanation_contains": [
+            "hidden"
+          ],
+          "limitation_contains": [
+            "not evaluated"
+          ]
+        }
+      }
+    }
+  }
+}

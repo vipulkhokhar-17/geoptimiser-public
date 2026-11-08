@@ -1,0 +1,18 @@
+{
+  "schema_version": 1,
+  "name": "fixture_judgments",
+  "version": 1,
+  "query_set_name": "fixture_queries",
+  "query_set_version": 1,
+  "origin": "fixture",
+  "judgments": [
+    {"query_id": "q1", "target": {"url": "https://x.test/what-is"}, "grade": 3},
+    {"query_id": "q1", "target": {"url": "https://x.test/guide", "heading": "Overview"}, "grade": 1},
+    {"query_id": "q2", "target": {"url": "https://x.test/approvals"}, "grade": 2},
+    {"query_id": "q3", "target": {"url": "https://x.test/missing-page"}, "grade": 3},
+    {"query_id": "q4", "target": {"url": "https://x.test/pricing"}, "grade": 3},
+    {"query_id": "q4", "target": {"url": "https://x.test/what-is"}, "grade": 0},
+    {"query_id": "q5", "target": {"url": "https://x.test/what-is"}, "grade": 0},
+    {"query_id": "q9", "target": {"url": "https://x.test/what-is"}, "grade": 2}
+  ]
+}

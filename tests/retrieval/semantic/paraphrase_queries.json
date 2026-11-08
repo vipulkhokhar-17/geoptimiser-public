@@ -1,0 +1,82 @@
+{
+  "schema_version": 1,
+  "name": "paraphrase_probe",
+  "version": 1,
+  "industry": "b2b_saas",
+  "description": "Paraphrased questions sharing no content word with the target page. Constructed to favour semantic matching; not a benchmark.",
+  "review_status": "draft",
+  "queries": [
+    {
+      "query_id": "p1",
+      "text": "reimbursement if I am unhappy with an order",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p2",
+      "text": "I forgot how to sign in",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p3",
+      "text": "what happens when the website stops working",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p4",
+      "text": "how long until my package gets here",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p5",
+      "text": "do you hand my data to marketers",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p6",
+      "text": "how can I stop paying for the service",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p7",
+      "text": "are there openings for software developers",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p8",
+      "text": "can my own program talk to your system",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    },
+    {
+      "query_id": "p9",
+      "text": "is your company green",
+      "intent": "informational",
+      "tags": [
+        "paraphrase"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,19 @@
+{
+  "model": {
+    "provider": "openrouter",
+    "model_id": "nvidia/nemotron-3-ultra-550b-a55b:free",
+    "base_url": "https://openrouter.ai/api/v1",
+    "api_key_env": "OPENROUTER_API_KEY",
+    "temperature": 0.0,
+    "max_tokens": 1024,
+    "timeout_seconds": 60
+  },
+  "max_iterations": 8,
+  "max_invalid_decisions": 3,
+  "max_model_retries": 2,
+  "max_tool_retries": 1,
+  "retry_delay_seconds": 1.0,
+  "tool_timeout_seconds": 30,
+  "max_observation_chars": 3000,
+  "history_window": 6
+}

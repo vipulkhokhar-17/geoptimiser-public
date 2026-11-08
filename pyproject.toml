@@ -1,0 +1,111 @@
+[build-system]
+requires = ["setuptools>=69", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "geoptimiser"
+version = "0.1.0"
+description = "Evidence-grounded GEO audit and experimentation platform"
+readme = "README.md"
+requires-python = ">=3.11"
+# Supported versions; keep in sync with the CI matrix in .github/workflows/ci.yml.
+classifiers = [
+  "Programming Language :: Python :: 3",
+  "Programming Language :: Python :: 3.11",
+  "Programming Language :: Python :: 3.12",
+  "Programming Language :: Python :: 3.13",
+  "Programming Language :: Python :: 3.14",
+]
+dependencies = [
+  "pydantic>=2.8,<3",
+]
+
+[project.optional-dependencies]
+dev = [
+  "pytest>=8.0",
+  "pytest-cov>=5.0",
+  "ruff>=0.6",
+]
+# Local semantic embeddings (ADR-0022). Heavy (pulls in PyTorch): not needed for the
+# crawler, the deterministic feature engine or any default test.
+semantic = [
+  "sentence-transformers>=3.0",
+]
+# Bounded ReAct agent (ADR-0023): LangGraph orchestration + OpenRouter via the
+# OpenAI-compatible LangChain client. Not needed by the crawler, the feature engine
+# or retrieval.
+agent = [
+  "langgraph>=1.0,<2",
+  "langchain-openai>=1.0,<2",
+]
+# Local HTTP API and bundled UI (ADR-0024). The pipeline and CLI do not need it.
+api = [
+  "fastapi>=0.115",
+  "uvicorn>=0.30",
+]
+web = [
+  "httpx>=0.27",
+  "beautifulsoup4>=4.12",
+  "trafilatura>=2.0",
+  "python-dotenv>=1.0",
+]
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+"geoptimiser.app" = ["ui/*"]
+"geoptimiser.demo" = ["site/before/*", "site/after/*"]
+"geoptimiser.validation" = ["feature_levels.json"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-ra"
+markers = [
+  "live: calls the real OpenRouter API (needs OPENROUTER_API_KEY and GEOPTIMISER_LIVE=1)",
+  "semantic: needs the optional semantic extra and the real embedding model (deselect with -m 'not semantic')",
+]
+
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["src"]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]
+
+[tool.ruff.lint.per-file-ignores]
+# The Stage 03 package and its tests are prose-heavy: catalog definitions, user-facing
+# explanation strings and fixture text read better unwrapped. Code is still formatted.
+"src/geoptimiser/agent/**/*.py" = ["E501"]
+"src/geoptimiser/app/**/*.py" = ["E501"]
+"src/geoptimiser/demo/**/*.py" = ["E501"]
+"src/geoptimiser/features/**/*.py" = ["E501", "E741"]
+"tests/features/**/*.py" = ["E501", "E731"]
+"tests/crawler/test_timings.py" = ["E501"]
+"tests/agent/**/*.py" = ["E501"]
+"tests/app/**/*.py" = ["E501"]
+"tests/test_demo.py" = ["E501"]
+"tests/benchmark/**/*.py" = ["E501"]
+"tests/visibility/**/*.py" = ["E501"]
+"tests/diagnosis/**/*.py" = ["E501"]
+"tests/retrieval/**/*.py" = ["E501"]
+"tests/retrieval/semantic/run_benchmark.py" = ["E501"]
+"tests/recommendations/**/*.py" = ["E501"]
+"tests/extraction/test_rich.py" = ["E501"]
+# The validation package's judgments, sources, overlap decisions and matrix are prose
+# tables (like the feature catalog); the rest of the package keeps the line limit.
+"src/geoptimiser/validation/judgments.py" = ["E501"]
+"src/geoptimiser/validation/sources.py" = ["E501"]
+"src/geoptimiser/validation/overlap.py" = ["E501"]
+"src/geoptimiser/validation/matrix.py" = ["E501"]
+"tests/validation/**/*.py" = ["E501"]
+"tests/features/test_evidence_policy.py" = ["E501"]
+"tests/features/test_measurement_states.py" = ["E501"]
+"tests/features/test_scoring_policy.py" = ["E501"]
+"tests/extraction/test_link_parity.py" = ["E501"]
+"tests/app/test_reportability.py" = ["E501"]
+"tests/e2e/**/*.py" = ["E501"]
+
+[tool.ruff.format]
+quote-style = "double"

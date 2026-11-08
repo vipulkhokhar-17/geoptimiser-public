@@ -1,0 +1,98 @@
+{
+  "spec_version": 1,
+  "id": "e1_http_status",
+  "title": "HTTP error statuses: page defects versus throttling of the crawler (F001 v2)",
+  "description": "Expectations written before the first run of F001 v2. 403, 404 and 500 are page failures; 429 and a 503 with Retry-After are throttling of this crawl and must be not_measured, never a fabricated failure; a 503 without Retry-After stays a failure.",
+  "defects": [],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Status home</title><meta name=\"description\" content=\"Status home page of the HTTP status fixture.\"></head><body><main><h1>Status home</h1><p>Acme Widgets describes its plans for small teams in plain words.</p><nav><a href=\"/forbidden\">Forbidden</a> <a href=\"/missing\">Missing</a> <a href=\"/throttled\">Throttled</a> <a href=\"/broken\">Broken</a> <a href=\"/maintenance\">Maintenance</a> <a href=\"/unavailable\">Unavailable</a></nav></main></body></html>"
+    },
+    "/forbidden": {
+      "status": 403,
+      "text": "forbidden",
+      "content_type": "text/plain"
+    },
+    "/missing": {
+      "status": 404,
+      "text": "missing",
+      "content_type": "text/plain"
+    },
+    "/throttled": {
+      "status": 429,
+      "text": "slow down",
+      "content_type": "text/plain",
+      "headers": {
+        "Retry-After": "120"
+      }
+    },
+    "/broken": {
+      "status": 500,
+      "text": "error",
+      "content_type": "text/plain"
+    },
+    "/maintenance": {
+      "status": 503,
+      "text": "maintenance",
+      "content_type": "text/plain",
+      "headers": {
+        "Retry-After": "3600"
+      }
+    },
+    "/unavailable": {
+      "status": 503,
+      "text": "down",
+      "content_type": "text/plain"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F001": {
+          "status": "pass"
+        }
+      },
+      "/forbidden": {
+        "F001": {
+          "status": "fail"
+        }
+      },
+      "/missing": {
+        "F001": {
+          "status": "fail"
+        }
+      },
+      "/throttled": {
+        "F001": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "429"
+          ]
+        }
+      },
+      "/broken": {
+        "F001": {
+          "status": "fail"
+        }
+      },
+      "/maintenance": {
+        "F001": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "retry-after"
+          ]
+        }
+      },
+      "/unavailable": {
+        "F001": {
+          "status": "fail"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,60 @@
+{
+  "spec_version": 1,
+  "id": "b4_noindex_intentional",
+  "title": "Deliberate noindex on a utility page",
+  "description": "A thank-you page carries noindex. That is an owner choice: report it, ask to confirm intent, do not call it high severity.",
+  "defects": [
+    "B4"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme noindex home</title>\n<meta name=\"description\" content=\"Home with a link to the thank-you page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/thank-you\">Thank you</a></nav></header><main><h1>Noindex home</h1><p>Home explains how Acme Widgets supports small teams with clear plans. Home explains how Acme Widgets supports small teams with clear plans. Home explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Home explains how Acme Widgets supports small teams with clear plans. Home explains how Acme Widgets supports small teams with clear plans. Home explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/thank-you": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Thank you</title>\n<meta name=\"description\" content=\"Order confirmation page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/thank-you\">\n<meta name=\"robots\" content=\"noindex, follow\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Thank you</h1><p>Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/thank-you": {
+        "F005": {
+          "status": "warning",
+          "explanation_contains": [
+            "confirm"
+          ]
+        },
+        "F021": {
+          "status": "pass"
+        }
+      },
+      "/": {
+        "F005": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F005"
+      ],
+      "severity": {
+        "fnd_F005": "low"
+      },
+      "text_contains": {
+        "fnd_F005": [
+          "confirm"
+        ]
+      }
+    },
+    "scores": {
+      "not_contributing": [
+        "F005"
+      ]
+    }
+  }
+}

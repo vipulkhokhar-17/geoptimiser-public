@@ -1,0 +1,66 @@
+{
+  "spec_version": 1,
+  "id": "yt_like_js_heavy",
+  "title": "YouTube-like page: server HTML is a script-driven shell",
+  "description": "SYNTHETIC reconstruction (not a snapshot of any real site): a complete ~300 KB response whose head is intact but whose body text is built by scripts. The title/description checks are valid; the text checks describe the HTML as fetched and must say it looks client-rendered, without claiming the page is broken for browsers.",
+  "defects": [
+    "B1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Example watch page - Video site</title>\n<meta name=\"description\" content=\"A watch page rendered by scripts after load.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n</head>\n<body>\n<app-root></app-root>\n<noscript>Please enable JavaScript to watch this video.</noscript>\n<script>var initialData = {\"contents\":\"{{WORDS:300000}}\"};</script>\n<script src=\"/static/player.js\"></script>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F021": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        },
+        "F011": {
+          "status": "pass"
+        },
+        "F029": {
+          "status": "pass"
+        },
+        "F051": {
+          "status": "fail",
+          "limitation_contains": [
+            "client-rendered"
+          ]
+        },
+        "F052": {
+          "status": "fail",
+          "limitation_contains": [
+            "client-rendered"
+          ]
+        },
+        "F102": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F051"
+      ],
+      "absent": [
+        "fnd_F021",
+        "syn_hard_to_extract"
+      ],
+      "text_contains": {
+        "fnd_F051": [
+          "does not execute JavaScript"
+        ]
+      }
+    }
+  }
+}

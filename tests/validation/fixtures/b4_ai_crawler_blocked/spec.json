@@ -1,0 +1,56 @@
+{
+  "spec_version": 1,
+  "id": "b4_ai_crawler_blocked",
+  "title": "AI crawler deliberately disallowed in robots.txt",
+  "description": "robots.txt blocks GPTBot site-wide while allowing everyone else; this is an owner policy to confirm, not a defect.",
+  "defects": [
+    "B4"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n\nUser-agent: GPTBot\nDisallow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme policy home</title>\n<meta name=\"description\" content=\"Policy fixture home page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Policy home</h1><p>Policy explains how Acme Widgets supports small teams with clear plans. Policy explains how Acme Widgets supports small teams with clear plans. Policy explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Policy explains how Acme Widgets supports small teams with clear plans. Policy explains how Acme Widgets supports small teams with clear plans. Policy explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/about": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme policy about</title>\n<meta name=\"description\" content=\"Policy fixture about page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/about\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Policy about</h1><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/about": {
+        "F004": {
+          "status": "warning",
+          "explanation_contains": [
+            "confirm"
+          ],
+          "explanation_excludes": [
+            "must",
+            "should be removed"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F004"
+      ],
+      "severity": {
+        "fnd_F004": "medium"
+      },
+      "text_contains": {
+        "fnd_F004": [
+          "confirm"
+        ]
+      }
+    },
+    "scores": {
+      "not_contributing": [
+        "F004"
+      ]
+    }
+  }
+}

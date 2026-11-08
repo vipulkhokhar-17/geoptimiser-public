@@ -1,0 +1,61 @@
+{
+  "spec_version": 1,
+  "id": "b3_redirect_applicability",
+  "title": "Redirect checks only apply to redirected pages",
+  "description": "An unredirected page is not a pass for 'redirect-chain length'; a two-hop chain exceeds the default limit of one hop.",
+  "defects": [
+    "B3"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme redirects</title>\n<meta name=\"description\" content=\"Redirect fixture home page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/old\">Old page</a></nav></header><main><h1>Redirects</h1><p>Redirects explains how Acme Widgets supports small teams with clear plans. Redirects explains how Acme Widgets supports small teams with clear plans. Redirects explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Redirects explains how Acme Widgets supports small teams with clear plans. Redirects explains how Acme Widgets supports small teams with clear plans. Redirects explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/old": {
+      "status": 301,
+      "headers": {
+        "Location": "/mid"
+      },
+      "text": ""
+    },
+    "/mid": {
+      "status": 301,
+      "headers": {
+        "Location": "/new"
+      },
+      "text": ""
+    },
+    "/new": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme new page</title>\n<meta name=\"description\" content=\"The final page of a redirect chain.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/new\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>New page</h1><p>New explains how Acme Widgets supports small teams with clear plans. New explains how Acme Widgets supports small teams with clear plans. New explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>New explains how Acme Widgets supports small teams with clear plans. New explains how Acme Widgets supports small teams with clear plans. New explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F015": {
+          "status": "not_applicable"
+        },
+        "F016": {
+          "status": "not_applicable"
+        }
+      },
+      "/new": {
+        "F015": {
+          "status": "fail"
+        },
+        "F016": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F015"
+      ]
+    }
+  }
+}

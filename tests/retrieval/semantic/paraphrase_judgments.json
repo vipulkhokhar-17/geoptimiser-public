@@ -1,0 +1,73 @@
+{
+  "schema_version": 1,
+  "name": "paraphrase_probe_judgments",
+  "version": 1,
+  "query_set_name": "paraphrase_probe",
+  "query_set_version": 1,
+  "origin": "fixture",
+  "judgments": [
+    {
+      "query_id": "p1",
+      "target": {
+        "url": "https://p.test/refunds"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p2",
+      "target": {
+        "url": "https://p.test/recovery"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p3",
+      "target": {
+        "url": "https://p.test/outages"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p4",
+      "target": {
+        "url": "https://p.test/delivery"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p5",
+      "target": {
+        "url": "https://p.test/privacy"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p6",
+      "target": {
+        "url": "https://p.test/cancel"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p7",
+      "target": {
+        "url": "https://p.test/careers"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p8",
+      "target": {
+        "url": "https://p.test/api"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "p9",
+      "target": {
+        "url": "https://p.test/green"
+      },
+      "grade": 3
+    }
+  ]
+}

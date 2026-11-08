@@ -1,0 +1,42 @@
+{
+  "spec_version": 1,
+  "id": "b4_noindex_entry_page",
+  "title": "noindex on the entry page",
+  "description": "The entry page carries noindex. Intent still cannot be known, but the consequence is site-wide, so the notice is medium severity.",
+  "defects": [
+    "B4"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme staging home</title>\n<meta name=\"description\" content=\"Staging home page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n<meta name=\"robots\" content=\"noindex\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Acme staging</h1><p>Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. Welcome to staging. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/about": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme staging about</title>\n<meta name=\"description\" content=\"Staging about page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/about\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Staging about</h1><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans. About explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F005": {
+          "status": "warning",
+          "explanation_contains": [
+            "confirm"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F005"
+      ],
+      "severity": {
+        "fnd_F005": "medium"
+      }
+    }
+  }
+}

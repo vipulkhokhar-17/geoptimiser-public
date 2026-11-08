@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+
+# Virtual environments
+.venv/
+venv/
+
+# Tool caches
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# Secrets and local configuration
+.env
+.env.*
+!.env.example
+.secrets/
+.netrc
+*.pem
+*.p12
+*.pfx
+*.key
+
+# Audit outputs, application data, and customer content
+data/
+artifacts/
+runs/
+bodies/
+*.db
+*.db-wal
+*.db-shm
+
+# Static-site export output
+/site/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

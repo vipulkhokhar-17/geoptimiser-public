@@ -1,0 +1,19 @@
+{
+  "embedder": {
+    "kind": "sentence-transformers",
+    "sentence_transformers": {
+      "model_id": "sentence-transformers/all-MiniLM-L6-v2",
+      "revision": "c9745ed1d9f207416be6d2e6f8de32d1f16199bf",
+      "device": "cpu",
+      "batch_size": 32,
+      "normalize": true,
+      "max_seq_length": null,
+      "local_files_only": false
+    }
+  },
+  "retrieval": {
+    "top_k": 10,
+    "candidates": 50,
+    "rrf_k": 60
+  }
+}

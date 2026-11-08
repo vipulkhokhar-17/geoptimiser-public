@@ -1,0 +1,94 @@
+{
+  "spec_version": 1,
+  "id": "combined_realistic_mix",
+  "title": "Truncation, JS shell, noindex, duplicates and a clean page together",
+  "description": "A realistic mixture: one truncated page, one client-rendered shell, one noindex utility page and two duplicate pages. Each condition keeps its own correct state.",
+  "defects": [
+    "A1",
+    "B1",
+    "B4",
+    "A3"
+  ],
+  "kind": "combined",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme realistic mix</title>\n<meta name=\"description\" content=\"Home page for the mixed fixture.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n<script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"@id\":\"https://fixture.test/#org\",\"name\":\"Acme Widgets\",\"url\":\"https://fixture.test/\",\"logo\":\"https://fixture.test/logo.png\"}</script>\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/big\">Big</a> <a href=\"/shell\">Shell</a> <a href=\"/private\">Private</a> <a href=\"/dup1\">One</a> <a href=\"/dup2\">Two</a></nav></header><main><h1>Realistic mix</h1><p>Mix explains how Acme Widgets supports small teams with clear plans. Mix explains how Acme Widgets supports small teams with clear plans. Mix explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Mix explains how Acme Widgets supports small teams with clear plans. Mix explains how Acme Widgets supports small teams with clear plans. Mix explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/big": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n{{COMMENT:4596}}\n<title>Late title that is beyond the cut</title>\n<meta name=\"description\" content=\"Late description.\">\n</head><body><main><h1>Late page</h1><p>{{WORDS:800}}</p></main></body></html>"
+    },
+    "/shell": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"></head><body><div id=\"root\"></div><noscript>You need to enable JavaScript to run this app.</noscript><script src=\"/static/app.js\"></script><script src=\"/static/vendor.js\"></script></body></html>"
+    },
+    "/private": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Thank you</title>\n<meta name=\"description\" content=\"Order confirmation page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/private\">\n<meta name=\"robots\" content=\"noindex, follow\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Thank you</h1><p>Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. Thanks for your order. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/dup1": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme duplicate 1</title>\n<meta name=\"description\" content=\"Duplicate page 1.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/dup1\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Duplicate content page</h1><p>Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/dup2": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme duplicate 2</title>\n<meta name=\"description\" content=\"Duplicate page 2.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/dup2\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Duplicate content page</h1><p>Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. Identical body copy used on two different URLs to create duplicate content. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/big": {
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        }
+      },
+      "/shell": {
+        "F051": {
+          "status": "fail",
+          "limitation_contains": [
+            "client-rendered"
+          ]
+        }
+      },
+      "/private": {
+        "F005": {
+          "status": "warning",
+          "explanation_contains": [
+            "confirm"
+          ]
+        }
+      },
+      "/dup1": {
+        "F014": {
+          "status": "fail"
+        }
+      },
+      "/dup2": {
+        "F014": {
+          "status": "fail"
+        }
+      },
+      "/": {
+        "F021": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "absent": [],
+      "present": [
+        "fnd_F014",
+        "fnd_F051",
+        "fnd_F005"
+      ],
+      "severity": {
+        "fnd_F005": "low"
+      }
+    }
+  },
+  "crawl": {
+    "max_response_bytes": 4096
+  }
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Geoptimiser</title>
+<meta name="description" content="Measure how a website is crawled, read and retrieved: a deterministic 120-feature GEO audit with evidence, findings and recommendations.">
+<link rel="preload" href="/ui/hanken-grotesk.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/ui/style.css">
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div class="shell">
+  <header class="topbar">
+    <a class="brand" href="#/" aria-label="Geoptimiser home">
+      <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#0d5b53"/><path d="M7 15.5 10.5 12l2.5 2.5L17.5 8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Geoptimiser
+    </a>
+    <button class="btn secondary small" id="menu-toggle" type="button" aria-expanded="false" aria-controls="rail">Menu</button>
+  </header>
+  <nav class="rail" id="rail" aria-label="Main">
+    <a class="brand" href="#/" aria-label="Geoptimiser home">
+      <svg width="24" height="24" viewBox="0 0 24 24" aria-hidden="true"><rect x="2" y="2" width="20" height="20" rx="5" fill="#0d5b53"/><path d="M7 15.5 10.5 12l2.5 2.5L17.5 8" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      Geoptimiser
+    </a>
+    <div class="nav">
+      <a href="#/" data-nav="home">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M8 3v10M3 8h10" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        New audit
+      </a>
+      <a href="#/audits" data-nav="audits">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M3 4h10M3 8h10M3 12h6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+        Audits
+      </a>
+      <a href="#/catalog" data-nav="catalog">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><rect x="2.5" y="2.5" width="4" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="9.5" y="2.5" width="4" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="2.5" y="9.5" width="4" height="4" rx="1" fill="none" stroke="currentColor" stroke-width="1.4"/><rect x="9.5" y="9.5" width="4" height="4" rx="1" fill="currentColor"/></svg>
+        Feature catalog
+      </a>
+      <a href="#/compare" data-nav="compare">
+        <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path d="M4 2v12M12 2v12M4 5h8M4 11h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+        Compare audits
+      </a>
+    </div>
+    <div class="rail-foot">
+      <span class="conn" id="backend" data-state="unknown" role="status">Checking backend…</span>
+      <span>Local tool without user accounts. Audit only sites you own or are authorized to test.</span>
+    </div>
+  </nav>
+  <main class="main" id="main" tabindex="-1">
+    <div class="page" id="view" aria-live="polite"><div class="loading"><span class="spin" aria-hidden="true"></span>Loading…</div></div>
+    <footer class="foot page">
+      <p>Geoptimiser measures properties of the HTML a site returns and makes rule-based suggestions. It does not execute JavaScript, and no change is guaranteed to make an AI search engine mention or cite a site.</p>
+    </footer>
+  </main>
+</div>
+<div class="visually-hidden" id="announce" role="status" aria-live="polite"></div>
+<script src="/ui/config.js"></script>
+<script src="/ui/app.js"></script>
+</body>
+</html>

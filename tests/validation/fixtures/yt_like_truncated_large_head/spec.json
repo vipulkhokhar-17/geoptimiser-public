@@ -1,0 +1,75 @@
+{
+  "spec_version": 1,
+  "id": "yt_like_truncated_large_head",
+  "title": "YouTube-like page: oversized inline config before the title",
+  "description": "SYNTHETIC reconstruction of the failure mechanism (not a snapshot of any real site): a >2 MB inline script in the head pushes the title past the default 2,000,000-byte response limit. Title, description and body text exist in the full document, so they must not be reported as missing.",
+  "defects": [
+    "A1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<script>var ytcfg = {\"EXPERIMENT_FLAGS\":\"{{WORDS:2100000}}\"};</script>\n<title>Example watch page - Video site</title>\n<meta name=\"description\" content=\"A watch page whose head carries a huge inline configuration blob.\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n</head>\n<body><main><h1>Example watch page</h1><p>Body text that follows the oversized head. {{WORDS:3000}}</p></main></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F001": {
+          "status": "pass"
+        },
+        "F021": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F024": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F011": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F051": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F061": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F102": {
+          "status": "fail",
+          "explanation_contains": [
+            "truncated"
+          ]
+        },
+        "F027": {
+          "status": "pass"
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F021",
+        "fnd_F024",
+        "fnd_F011",
+        "fnd_F051"
+      ]
+    }
+  }
+}

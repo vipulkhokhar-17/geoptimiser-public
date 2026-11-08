@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "name": "fixture_retrieval_judgments",
+  "version": 1,
+  "query_set_name": "fixture_retrieval",
+  "query_set_version": 1,
+  "origin": "fixture",
+  "judgments": [
+    {"query_id": "r1", "target": {"url": "https://x.test/what-is"}, "grade": 3},
+    {"query_id": "r2", "target": {"url": "https://x.test/approvals"}, "grade": 3},
+    {"query_id": "r3", "target": {"url": "https://x.test/compare"}, "grade": 3},
+    {"query_id": "r3", "target": {"url": "https://x.test/what-is"}, "grade": 1},
+    {"query_id": "r4", "target": {"url": "https://x.test/pricing", "heading": "Pricing"}, "grade": 3},
+    {"query_id": "r5", "target": {"url": "https://x.test/security"}, "grade": 3},
+    {"query_id": "r6", "target": {"url": "https://x.test/integrations"}, "grade": 3},
+    {"query_id": "r7", "target": {"url": "https://x.test/pricing", "heading": "Enterprise"}, "grade": 3},
+    {"query_id": "r8", "target": {"url": "https://x.test/about"}, "grade": 2}
+  ]
+}

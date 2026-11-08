@@ -1,0 +1,96 @@
+{
+  "spec_version": 1,
+  "id": "a2_canonical_states",
+  "title": "Canonical targets in every evidence state",
+  "description": "Canonicals point to a healthy crawled page, an uncrawled URL, a timed-out URL, a 404, and a malformed value.",
+  "defects": [
+    "A2"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme canonical states</title>\n<meta name=\"description\" content=\"Canonical state test home page.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/c-ok\">c-ok</a> <a href=\"/c-uncrawled\">c-uncrawled</a> <a href=\"/c-timeout\">c-timeout</a> <a href=\"/c-404\">c-404</a> <a href=\"/c-bad\">c-bad</a> <a href=\"/timeout\">timeout</a> <a href=\"/gone\">gone</a> <a href=\"/target\">target</a> </nav></header><main><h1>Canonical states</h1><p>Canonical explains how Acme Widgets supports small teams with clear plans. Canonical explains how Acme Widgets supports small teams with clear plans. Canonical explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Canonical explains how Acme Widgets supports small teams with clear plans. Canonical explains how Acme Widgets supports small teams with clear plans. Canonical explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/target": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Target</title>\n<meta name=\"description\" content=\"Target description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/target\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Target</h1><p>Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. Target page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/c-ok": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Canonical ok</title>\n<meta name=\"description\" content=\"Canonical ok description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/target\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Canonical ok</h1><p>Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. Canonical ok page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/c-uncrawled": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Canonical uncrawled</title>\n<meta name=\"description\" content=\"Canonical uncrawled description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/never-linked\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Canonical uncrawled</h1><p>Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. Canonical uncrawled page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/c-timeout": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Canonical timeout</title>\n<meta name=\"description\" content=\"Canonical timeout description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/timeout\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Canonical timeout</h1><p>Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. Canonical timeout page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/c-404": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Canonical 404</title>\n<meta name=\"description\" content=\"Canonical 404 description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/gone\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Canonical 404</h1><p>Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. Canonical 404 page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/c-bad": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Canonical bad</title>\n<meta name=\"description\" content=\"Canonical bad description text for the canonical test.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"javascript:void(0)\">\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Canonical bad</h1><p>Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. Canonical bad page content for canonical testing. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/timeout": {
+      "behavior": "hang"
+    },
+    "/gone": {
+      "status": 404,
+      "text": "gone",
+      "content_type": "text/plain"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/c-ok": {
+        "F012": {
+          "status": "pass"
+        }
+      },
+      "/c-uncrawled": {
+        "F012": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "not crawled"
+          ]
+        }
+      },
+      "/c-timeout": {
+        "F012": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "could not be fetched"
+          ]
+        }
+      },
+      "/c-404": {
+        "F012": {
+          "status": "fail",
+          "explanation_contains": [
+            "404"
+          ]
+        }
+      },
+      "/c-bad": {
+        "F012": {
+          "status": "fail"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F012"
+      ],
+      "text_contains": {
+        "fnd_F012": [
+          "404"
+        ]
+      }
+    }
+  },
+  "crawl": {
+    "request_timeout_seconds": 0.5
+  }
+}

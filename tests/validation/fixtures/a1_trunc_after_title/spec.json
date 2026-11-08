@@ -1,0 +1,85 @@
+{
+  "spec_version": 1,
+  "id": "a1_trunc_after_title",
+  "title": "Response truncated after a complete head",
+  "description": "The head and the first text are complete; only the body tail is cut. Head and presence checks stay valid; absence checks on the body are inconclusive.",
+  "defects": [
+    "A1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme Widgets home</title>\n<meta name=\"description\" content=\"Welcome to Acme Widgets.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/long\">Big page</a></nav></header><main><h1>Acme Widgets</h1><p>Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. Welcome to Acme Widgets. </p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/long": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme long guide to widgets</title>\n<meta name=\"description\" content=\"A long guide to Acme widgets.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/long\">\n</head>\n<body><main><h1>Acme long guide</h1><p>{{WORDS:9000}}</p></main></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/long": {
+        "F021": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "pass"
+        },
+        "F011": {
+          "status": "pass"
+        },
+        "F027": {
+          "status": "pass"
+        },
+        "F029": {
+          "status": "pass"
+        },
+        "F005": {
+          "status": "pass"
+        },
+        "F051": {
+          "status": "pass"
+        },
+        "F052": {
+          "status": "pass"
+        },
+        "F061": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F060": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F014": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "truncat"
+          ]
+        },
+        "F102": {
+          "status": "fail"
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F021",
+        "fnd_F024",
+        "fnd_F011",
+        "fnd_F051",
+        "fnd_F061"
+      ]
+    }
+  },
+  "crawl": {
+    "max_response_bytes": 4096
+  }
+}

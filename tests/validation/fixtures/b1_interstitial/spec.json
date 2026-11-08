@@ -1,0 +1,54 @@
+{
+  "spec_version": 1,
+  "id": "b1_interstitial",
+  "title": "Bot-challenge interstitial served with HTTP 200",
+  "description": "The fetch returned a challenge page, not the intended page. Content checks must be inconclusive, not failures of the target site.",
+  "defects": [
+    "B1"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html>\n<head>\n<meta charset=\"utf-8\">\n<title>Just a moment...</title>\n\n</head>\n<body>\n<main><h1>Just a moment...</h1><p>Checking your browser before accessing the site. Please verify you are human and enable JavaScript and cookies to continue.</p></main>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F001": {
+          "status": "pass"
+        },
+        "F024": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "interstitial"
+          ]
+        },
+        "F051": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "interstitial"
+          ]
+        },
+        "F011": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "interstitial"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F024",
+        "fnd_F051",
+        "fnd_F011",
+        "fnd_F027"
+      ]
+    }
+  }
+}

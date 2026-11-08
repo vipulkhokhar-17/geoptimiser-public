@@ -1,0 +1,48 @@
+{
+  "spec_version": 1,
+  "id": "crawl_incomplete_max_pages",
+  "title": "Crawl stopped by the page budget",
+  "description": "Only two pages were crawled out of seven; absence of data about the other pages must not be turned into passes.",
+  "defects": [
+    "A4"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme many pages</title>\n<meta name=\"description\" content=\"Home with many links.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a> <a href=\"/p0\">page 0</a> <a href=\"/p1\">page 1</a> <a href=\"/p2\">page 2</a> <a href=\"/p3\">page 3</a> <a href=\"/p4\">page 4</a> <a href=\"/p5\">page 5</a> </nav></header><main><h1>Many pages</h1><p>Many explains how Acme Widgets supports small teams with clear plans. Many explains how Acme Widgets supports small teams with clear plans. Many explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Many explains how Acme Widgets supports small teams with clear plans. Many explains how Acme Widgets supports small teams with clear plans. Many explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p0": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 0 title</title>\n<meta name=\"description\" content=\"Description for page number 0.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p0\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 0</h1><p>Page0 explains how Acme Widgets supports small teams with clear plans. Page0 explains how Acme Widgets supports small teams with clear plans. Page0 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page0 explains how Acme Widgets supports small teams with clear plans. Page0 explains how Acme Widgets supports small teams with clear plans. Page0 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p1": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 1 title</title>\n<meta name=\"description\" content=\"Description for page number 1.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p1\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 1</h1><p>Page1 explains how Acme Widgets supports small teams with clear plans. Page1 explains how Acme Widgets supports small teams with clear plans. Page1 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page1 explains how Acme Widgets supports small teams with clear plans. Page1 explains how Acme Widgets supports small teams with clear plans. Page1 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p2": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 2 title</title>\n<meta name=\"description\" content=\"Description for page number 2.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p2\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 2</h1><p>Page2 explains how Acme Widgets supports small teams with clear plans. Page2 explains how Acme Widgets supports small teams with clear plans. Page2 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page2 explains how Acme Widgets supports small teams with clear plans. Page2 explains how Acme Widgets supports small teams with clear plans. Page2 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p3": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 3 title</title>\n<meta name=\"description\" content=\"Description for page number 3.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p3\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 3</h1><p>Page3 explains how Acme Widgets supports small teams with clear plans. Page3 explains how Acme Widgets supports small teams with clear plans. Page3 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page3 explains how Acme Widgets supports small teams with clear plans. Page3 explains how Acme Widgets supports small teams with clear plans. Page3 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p4": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 4 title</title>\n<meta name=\"description\" content=\"Description for page number 4.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p4\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 4</h1><p>Page4 explains how Acme Widgets supports small teams with clear plans. Page4 explains how Acme Widgets supports small teams with clear plans. Page4 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page4 explains how Acme Widgets supports small teams with clear plans. Page4 explains how Acme Widgets supports small teams with clear plans. Page4 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/p5": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme page 5 title</title>\n<meta name=\"description\" content=\"Description for page number 5.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/p5\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Page 5</h1><p>Page5 explains how Acme Widgets supports small teams with clear plans. Page5 explains how Acme Widgets supports small teams with clear plans. Page5 explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Page5 explains how Acme Widgets supports small teams with clear plans. Page5 explains how Acme Widgets supports small teams with clear plans. Page5 explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {},
+    "scores": {
+      "overall": {
+        "reportable": false
+      }
+    }
+  },
+  "crawl": {
+    "max_pages": 2
+  }
+}

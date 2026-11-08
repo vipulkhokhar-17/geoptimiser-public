@@ -1,0 +1,31 @@
+{
+  "schema_version": 1,
+  "name": "lexical_control_judgments",
+  "version": 1,
+  "query_set_name": "lexical_control",
+  "query_set_version": 1,
+  "origin": "fixture",
+  "judgments": [
+    {
+      "query_id": "c1",
+      "target": {
+        "url": "https://p.test/refunds"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "c2",
+      "target": {
+        "url": "https://p.test/green"
+      },
+      "grade": 3
+    },
+    {
+      "query_id": "c3",
+      "target": {
+        "url": "https://p.test/careers"
+      },
+      "grade": 3
+    }
+  ]
+}

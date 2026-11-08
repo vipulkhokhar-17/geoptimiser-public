@@ -1,0 +1,44 @@
+{
+  "spec_version": 1,
+  "id": "a5_jsonld_size_limit",
+  "title": "JSON-LD block skipped for size",
+  "description": "A valid but very large JSON-LD block exceeds the extractor's block-size limit; it was skipped, not invalid.",
+  "defects": [
+    "A5"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html><html lang=\"en\"><head><meta charset=\"utf-8\"><title>Acme oversized JSON-LD</title><script type=\"application/ld+json\">{\"@context\":\"https://schema.org\",\"@type\":\"Organization\",\"name\":\"Acme\",\"description\":\"{{WORDS:300000}}\"}</script></head><body><main><h1>Oversized</h1><p>Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. Body text for the oversized structured data page. </p></main></body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F061": {
+          "status": "not_measured",
+          "explanation_contains": [
+            "limit"
+          ],
+          "explanation_excludes": [
+            "syntax"
+          ]
+        }
+      }
+    },
+    "findings": {
+      "absent": [
+        "fnd_F061"
+      ]
+    },
+    "recommendation_excludes": [
+      "json syntax",
+      "invalid json",
+      "fix the json"
+    ]
+  }
+}

@@ -1,0 +1,650 @@
+{
+  "fixtures": 25,
+  "fixtures_passed": 25,
+  "expectations": 280,
+  "expectations_met": 280,
+  "state_confusion": {
+    "fail -> fail": 28,
+    "not_applicable -> not_applicable": 9,
+    "not_measured -> not_measured": 30,
+    "pass -> pass": 117,
+    "warning -> warning": 4
+  },
+  "false_failures_on_unmeasurable": 0,
+  "silent_passes_on_unmeasurable": 0,
+  "per_feature_metrics": {
+    "F001": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 13,
+      "fn": 0,
+      "n": 15,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F002": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F005": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0,
+      "n": 5,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F006": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 4,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F009": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 4,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F010": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 4,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F011": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0,
+      "n": 6,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F012": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 6,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F013": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F014": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 5,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F015": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "n": 1,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F016": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 1,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F020": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F021": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 9,
+      "fn": 0,
+      "n": 11,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F022": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F023": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 4,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F024": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "n": 8,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F025": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F027": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 6,
+      "fn": 0,
+      "n": 7,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F029": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0,
+      "n": 5,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F035": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F051": {
+      "tp": 3,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 7,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.4385,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.4385,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F052": {
+      "tp": 3,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 7,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.4385,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.4385,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F054": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "n": 1,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F055": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 3,
+      "fn": 0,
+      "n": 3,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F059": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "n": 1,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F060": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 1,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F061": {
+      "tp": 2,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 6,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.3424,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.3424,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F062": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 4,
+      "fn": 0,
+      "n": 4,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F072": {
+      "tp": 0,
+      "fp": 0,
+      "tn": 5,
+      "fn": 0,
+      "n": 5,
+      "precision": null,
+      "precision_ci95": null,
+      "recall": null,
+      "recall_ci95": null,
+      "abstained": {}
+    },
+    "F081": {
+      "tp": 1,
+      "fp": 0,
+      "tn": 0,
+      "fn": 0,
+      "n": 1,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.2065,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.2065,
+        1.0
+      ],
+      "abstained": {}
+    },
+    "F102": {
+      "tp": 3,
+      "fp": 0,
+      "tn": 1,
+      "fn": 0,
+      "n": 4,
+      "precision": 1.0,
+      "precision_ci95": [
+        0.4385,
+        1.0
+      ],
+      "recall": 1.0,
+      "recall_ci95": [
+        0.4385,
+        1.0
+      ],
+      "abstained": {}
+    }
+  },
+  "fixture_results": [
+    {
+      "fixture": "a1_complete_missing_metadata",
+      "passed": true,
+      "expectations": 10,
+      "failures": []
+    },
+    {
+      "fixture": "a1_trunc_after_title",
+      "passed": true,
+      "expectations": 17,
+      "failures": []
+    },
+    {
+      "fixture": "a1_trunc_before_title",
+      "passed": true,
+      "expectations": 21,
+      "failures": []
+    },
+    {
+      "fixture": "a1_trunc_jsonld",
+      "passed": true,
+      "expectations": 7,
+      "failures": []
+    },
+    {
+      "fixture": "a2_canonical_states",
+      "passed": true,
+      "expectations": 7,
+      "failures": []
+    },
+    {
+      "fixture": "a3_independent_failures",
+      "passed": true,
+      "expectations": 9,
+      "failures": []
+    },
+    {
+      "fixture": "a3_single_root_cause",
+      "passed": true,
+      "expectations": 4,
+      "failures": []
+    },
+    {
+      "fixture": "a5_jsonld_size_limit",
+      "passed": true,
+      "expectations": 5,
+      "failures": []
+    },
+    {
+      "fixture": "a5_jsonld_states",
+      "passed": true,
+      "expectations": 4,
+      "failures": []
+    },
+    {
+      "fixture": "b1_empty_blocked_nonhtml",
+      "passed": true,
+      "expectations": 7,
+      "failures": []
+    },
+    {
+      "fixture": "b1_hydration_hidden",
+      "passed": true,
+      "expectations": 1,
+      "failures": []
+    },
+    {
+      "fixture": "b1_interstitial",
+      "passed": true,
+      "expectations": 8,
+      "failures": []
+    },
+    {
+      "fixture": "b1_js_shell",
+      "passed": true,
+      "expectations": 7,
+      "failures": []
+    },
+    {
+      "fixture": "b2_base_href",
+      "passed": true,
+      "expectations": 2,
+      "failures": []
+    },
+    {
+      "fixture": "b2_link_forms",
+      "passed": true,
+      "expectations": 16,
+      "failures": []
+    },
+    {
+      "fixture": "b3_redirect_applicability",
+      "passed": true,
+      "expectations": 5,
+      "failures": []
+    },
+    {
+      "fixture": "b4_ai_crawler_blocked",
+      "passed": true,
+      "expectations": 5,
+      "failures": []
+    },
+    {
+      "fixture": "b4_noindex_entry_page",
+      "passed": true,
+      "expectations": 3,
+      "failures": []
+    },
+    {
+      "fixture": "b4_noindex_intentional",
+      "passed": true,
+      "expectations": 7,
+      "failures": []
+    },
+    {
+      "fixture": "clean_static",
+      "passed": true,
+      "expectations": 96,
+      "failures": []
+    },
+    {
+      "fixture": "combined_realistic_mix",
+      "passed": true,
+      "expectations": 10,
+      "failures": []
+    },
+    {
+      "fixture": "crawl_incomplete_max_pages",
+      "passed": true,
+      "expectations": 1,
+      "failures": []
+    },
+    {
+      "fixture": "empty_failed_crawl",
+      "passed": true,
+      "expectations": 5,
+      "failures": []
+    },
+    {
+      "fixture": "yt_like_js_heavy",
+      "passed": true,
+      "expectations": 11,
+      "failures": []
+    },
+    {
+      "fixture": "yt_like_truncated_large_head",
+      "passed": true,
+      "expectations": 12,
+      "failures": []
+    }
+  ],
+  "note": "Metrics come from synthetic fixtures with pre-declared expectations: they test measurement correctness on constructed cases, not accuracy on real websites."
+}

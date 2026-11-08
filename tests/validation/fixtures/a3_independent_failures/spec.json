@@ -1,0 +1,48 @@
+{
+  "spec_version": 1,
+  "id": "a3_independent_failures",
+  "title": "Several independent failures on one page",
+  "description": "Missing landmarks (counted once), a generic title, a missing description and an image without alt text are four different problems.",
+  "defects": [
+    "A3"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Home</title>\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<div><h1>Home</h1><p>Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. Generic page content without landmarks. </p><img src=\"/img/IMG_0001.png\" width=\"10\" height=\"10\"></div>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/": {
+        "F052": {
+          "status": "fail"
+        },
+        "F023": {
+          "status": "fail"
+        },
+        "F024": {
+          "status": "fail"
+        },
+        "F081": {
+          "status": "fail"
+        }
+      }
+    },
+    "findings": {
+      "present": [
+        "fnd_F052",
+        "fnd_F023",
+        "fnd_F024",
+        "fnd_F081"
+      ],
+      "absent": [
+        "fnd_F059"
+      ]
+    }
+  }
+}

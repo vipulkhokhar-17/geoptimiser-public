@@ -1,0 +1,91 @@
+{
+  "spec_version": 1,
+  "id": "b2_link_forms",
+  "title": "Links in anchors, noscript and malformed markup",
+  "description": "Pages reachable only through a noscript anchor or malformed markup were discovered by the crawler; the link graph must agree, so none is orphaned or unreachable.",
+  "defects": [
+    "B2"
+  ],
+  "kind": "isolated",
+  "site": {
+    "/robots.txt": {
+      "text": "User-agent: *\nAllow: /\n",
+      "content_type": "text/plain"
+    },
+    "/": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme link forms</title>\n<meta name=\"description\" content=\"Home page with several link forms.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>Link forms</h1><p>Links explains how Acme Widgets supports small teams with clear plans. Links explains how Acme Widgets supports small teams with clear plans. Links explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Links explains how Acme Widgets supports small teams with clear plans. Links explains how Acme Widgets supports small teams with clear plans. Links explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p><p><a href=\"/plain\">plain link</a></p><noscript><a href=\"/only-noscript\">noscript link</a></noscript><p><a href=\"/malformed\">malformed <b>link</a></p><a href='/single-quoted'>single</a></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/plain": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme plain target</title>\n<meta name=\"description\" content=\"Target page plain of the link fixture.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/plain\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>plain target</h1><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p><p><a href=\"/\">Back home</a></p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/only-noscript": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme only-noscript target</title>\n<meta name=\"description\" content=\"Target page only-noscript of the link fixture.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/only-noscript\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>only-noscript target</h1><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p><p><a href=\"/\">Back home</a></p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/malformed": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme malformed target</title>\n<meta name=\"description\" content=\"Target page malformed of the link fixture.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/malformed\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>malformed target</h1><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p><p><a href=\"/\">Back home</a></p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    },
+    "/single-quoted": {
+      "text": "<!doctype html>\n<html lang=\"en\">\n<head>\n<meta charset=\"utf-8\">\n<title>Acme single-quoted target</title>\n<meta name=\"description\" content=\"Target page single-quoted of the link fixture.\">\n<meta name=\"viewport\" content=\"width=device-width, initial-scale=1\">\n<link rel=\"canonical\" href=\"https://fixture.test/single-quoted\">\n\n</head>\n<body>\n<header><nav aria-label=\"Main\"><a href=\"/\">Home</a> <a href=\"/about\">About the team</a> <a href=\"/pricing\">Pricing plans</a></nav></header><main><h1>single-quoted target</h1><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. </p><h2>Details</h2><p>Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans. Target explains how Acme Widgets supports small teams with clear plans.  Each plan lists exactly what is included and how billing works.</p><p><a href=\"/\">Back home</a></p></main><footer><p>Contact Acme Widgets</p></footer>\n</body></html>"
+    }
+  },
+  "expect": {
+    "pages": {
+      "/plain": {
+        "F001": {
+          "status": "pass"
+        },
+        "F072": {
+          "status": "pass"
+        },
+        "F009": {
+          "status": "pass"
+        },
+        "F010": {
+          "status": "pass"
+        }
+      },
+      "/only-noscript": {
+        "F001": {
+          "status": "pass"
+        },
+        "F072": {
+          "status": "pass"
+        },
+        "F009": {
+          "status": "pass"
+        },
+        "F010": {
+          "status": "pass"
+        }
+      },
+      "/malformed": {
+        "F001": {
+          "status": "pass"
+        },
+        "F072": {
+          "status": "pass"
+        },
+        "F009": {
+          "status": "pass"
+        },
+        "F010": {
+          "status": "pass"
+        }
+      },
+      "/single-quoted": {
+        "F001": {
+          "status": "pass"
+        },
+        "F072": {
+          "status": "pass"
+        },
+        "F009": {
+          "status": "pass"
+        },
+        "F010": {
+          "status": "pass"
+        }
+      }
+    }
+  }
+}
