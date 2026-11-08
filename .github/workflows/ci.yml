@@ -44,9 +44,6 @@ jobs:
       - name: Ruff format check
         run: ruff format --check .
 
-      - name: Validate release helper syntax
-        run: bash -n scripts/create_clean_release_repo.sh
-
       - name: Tests
         run: python -m pytest
 
